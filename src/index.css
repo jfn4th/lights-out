@@ -2,6 +2,7 @@ code {
 	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
+
 body {
 	margin: 0;
 	padding: 0;
@@ -10,7 +11,6 @@ body {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	background-color: #212121;
-	padding-top: 50px;
 	color: white;
 	text-align: center;
 }
