@@ -7,17 +7,24 @@ class Board extends Component {
     static defaultProps = {
         ncols: 5,
         nrows: 5,
-        chanceLightStartsOn: 0.4
+        chanceLightStartsOn: 0.5
     };
 
     constructor(props) {
         super(props);
         this.state = {
             hasWon: false,
-            board: this.createBoard()
+            board: []
         };
+        this.startingBoard = this.createBoard();
         this.fillTable = this.fillTable.bind(this);
         this.flipCellsAround = this.flipCellsAround.bind(this);
+        this.resetBoard = this.resetBoard.bind(this);
+        this.newGame = this.newGame.bind(this);
+    }
+
+    componentDidMount() {
+        this.resetBoard();
     }
 
     /** create a board nrows high/ncols wide, each cell randomly lit or unlit */
@@ -55,7 +62,6 @@ class Board extends Component {
         coords.forEach((coord) => {
             flipCell(...coord);
         });
-
         //  determine is the game has been won
         const hasWon = board.every((row) => row.every((cell) => !cell));
         this.setState({ board, hasWon });
@@ -76,6 +82,15 @@ class Board extends Component {
             </table>
         );
     }
+
+    resetBoard() {
+        this.setState({ hasWon: false, board: this.startingBoard.map((arr) => [ ...arr ]) });
+    }
+    newGame() {
+        this.startingBoard = this.createBoard();
+        this.resetBoard();
+    }
+
     /** Render game board or winning message. */
 
     render() {
@@ -85,6 +100,11 @@ class Board extends Component {
                     <div className='winner'>
                         <span className='neon-orange'>YOU</span>
                         <span className='neon-blue'>WIN!</span>
+                        <div className='reset'>
+                            <button className='reset-btn' onClick={this.newGame}>
+                                Play Again?
+                            </button>
+                        </div>
                     </div>
                 ) : (
                     <div>
@@ -93,6 +113,11 @@ class Board extends Component {
                             <div className='neon-blue'>Out</div>
                         </div>
                         {this.fillTable()}
+                        <div className='reset'>
+                            <button className='reset-btn' onClick={this.resetBoard}>
+                                Start Over
+                            </button>
+                        </div>
                     </div>
                 )}
             </div>

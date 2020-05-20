@@ -4,7 +4,6 @@
     -webkit-box-shadow: 0 0 50px #fff, -10px 0 80px #ff0, 10px 0 80px #f0f;
     -moz-box-shadow: 0 0 50px #fff, -10px 0 80px #ff0, 10px 0 80px #f0f;
     box-shadow: 0 0 50px #fff, -10px 0 80px #ff0, 10px 0 80px #f0f;
-    z-index: 1;
 }
 
 .Board tr:first-of-type td:first-of-type {
@@ -55,6 +54,28 @@
     -o-animation: neon-blue 2s linear infinite;
 }
 
+.reset-btn {
+    border: 0;
+    font-family: neon;
+    background: none;
+    font-size: 65px;
+    color: #e63ff5;
+    text-shadow: 0 0 2vw #d514e7;
+    animation: reset 4s linear infinite;
+    -moz-animation: reset 4s linear infinite;
+    -webkit-animation: reset 4s linear infinite;
+    -o-animation: reset 4s linear infinite;
+    outline: none;
+}
+
+.reset-btn:hover {
+    cursor: pointer;
+    animation-play-state: 100%;
+    -moz-animation-play-state: 100%;
+    -webkit-animation-play-state: 100%;
+    -o-animation-play-state: 100%;
+}
+
 @keyframes neon-orange {
     0%,
     100% {
@@ -76,5 +97,17 @@
     50% {
         text-shadow: 0 0 .5vw #082180, 0 0 1.5vw #082180, 0 0 5vw #082180, 0 0 5vw #082180, 0 0 .2vw #082180, 8px 8px .1vw #0a3940;
         color: #146c80;
+    }
+}
+
+@keyframes reset {
+    0%,
+    100% {
+        text-shadow: 0 0 1vw #b922ff, 0 0 3vw #b922ff, 0 0 10vw #b922ff, 0 0 10vw #b922ff, 0 0 .4vw #ff2f90, 8px 8px .1vw #700f53;
+        color: #ff2fc1;
+    }
+    50% {
+        text-shadow: 0 0 .5vw #611286, 0 0 1.5vw #611286, 0 0 5vw #611286, 0 0 5vw #611286, 0 0 .2vw #611286, 8px 8px .1vw #440a33;
+        color: #700f53;
     }
 }
