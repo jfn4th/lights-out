@@ -100,7 +100,7 @@ class Board extends Component {
                     <div className='winner'>
                         <span className='neon-orange'>YOU</span>
                         <span className='neon-blue'>WIN!</span>
-                        <div className='reset'>
+                        <div>
                             <button className='reset-btn' onClick={this.newGame}>
                                 Play Again?
                             </button>
@@ -113,7 +113,7 @@ class Board extends Component {
                             <div className='neon-blue'>Out</div>
                         </div>
                         {this.fillTable()}
-                        <div className='reset'>
+                        <div>
                             <button className='reset-btn' onClick={this.resetBoard}>
                                 Start Over
                             </button>

@@ -59,31 +59,28 @@
     font-family: neon;
     background: none;
     font-size: 65px;
-    color: #e63ff5;
-    text-shadow: 0 0 2vw #d514e7;
-    animation: reset 4s linear infinite;
-    -moz-animation: reset 4s linear infinite;
-    -webkit-animation: reset 4s linear infinite;
-    -o-animation: reset 4s linear infinite;
+    text-shadow: 0 0 0vw #611286, 0 0 0vw #611286, 0 0 0vw #611286, 0 0 0vw #611286, 0 0 0vw #611286, 1px 1px .1vw #440a33;
+    color: #700f53;
+    color: #700f53;
     outline: none;
+    transition: text-shadow 0.5s, color 0.75s;
 }
 
 .reset-btn:hover {
     cursor: pointer;
-    animation-play-state: 100%;
-    -moz-animation-play-state: 100%;
-    -webkit-animation-play-state: 100%;
-    -o-animation-play-state: 100%;
+    animation: none;
+    text-shadow: 0 0 1vw #b922ff, 0 0 2vw #b922ff, 0 0 6vw #b922ff, 0 0 6vw #b922ff, 0 0 .3vw #ff2f90, 7px 7px .1vw #700f53;
+    color: #ff2fc1;
 }
 
 @keyframes neon-orange {
     0%,
     100% {
-        text-shadow: 0 0 1vw #fa1c16, 0 0 3vw #fa1c16, 0 0 10vw #fa1c16, 0 0 10vw #fa1c16, 0 0 .4vw #fed128, 8px 8px .1vw #806914;
+        text-shadow: 0 0 1vw #fa1c16, 0 0 3vw #fa1c16, 0 0 10vw #fa1c16, 0 0 10vw #fa1c16, 0 0 .4vw #fed128, 7px 7px .1vw #806914;
         color: #fed128;
     }
     50% {
-        text-shadow: 0 0 .5vw #800e0b, 0 0 1.5vw #800e0b, 0 0 5vw #800e0b, 0 0 5vw #800e0b, 0 0 .2vw #800e0b, 8px 8px .1vw #40340a;
+        text-shadow: 0 0 .5vw #800e0b, 0 0 1.5vw #800e0b, 0 0 5vw #800e0b, 0 0 5vw #800e0b, 0 0 .2vw #800e0b, 7px 7px .1vw #40340a;
         color: #806914;
     }
 }
@@ -91,23 +88,11 @@
 @keyframes neon-blue {
     0%,
     100% {
-        text-shadow: 0 0 1vw #1041ff, 0 0 3vw #1041ff, 0 0 10vw #1041ff, 0 0 10vw #1041ff, 0 0 .4vw #8bfdfe, 8px 8px .1vw #147280;
+        text-shadow: 0 0 1vw #1041ff, 0 0 3vw #1041ff, 0 0 10vw #1041ff, 0 0 10vw #1041ff, 0 0 .4vw #8bfdfe, 7px 7px .1vw #147280;
         color: #28d7fe;
     }
     50% {
-        text-shadow: 0 0 .5vw #082180, 0 0 1.5vw #082180, 0 0 5vw #082180, 0 0 5vw #082180, 0 0 .2vw #082180, 8px 8px .1vw #0a3940;
+        text-shadow: 0 0 .5vw #082180, 0 0 1.5vw #082180, 0 0 5vw #082180, 0 0 5vw #082180, 0 0 .2vw #082180, 7px 7px .1vw #0a3940;
         color: #146c80;
-    }
-}
-
-@keyframes reset {
-    0%,
-    100% {
-        text-shadow: 0 0 1vw #b922ff, 0 0 3vw #b922ff, 0 0 10vw #b922ff, 0 0 10vw #b922ff, 0 0 .4vw #ff2f90, 8px 8px .1vw #700f53;
-        color: #ff2fc1;
-    }
-    50% {
-        text-shadow: 0 0 .5vw #611286, 0 0 1.5vw #611286, 0 0 5vw #611286, 0 0 5vw #611286, 0 0 .2vw #611286, 8px 8px .1vw #440a33;
-        color: #700f53;
     }
 }
