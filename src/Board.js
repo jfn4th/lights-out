@@ -14,13 +14,15 @@ class Board extends Component {
         super(props);
         this.state = {
             hasWon: false,
-            board: []
+            board: [],
+			numClicks: 0
         };
         this.startingBoard = this.createBoard();
         this.fillTable = this.fillTable.bind(this);
         this.flipCellsAround = this.flipCellsAround.bind(this);
         this.resetBoard = this.resetBoard.bind(this);
         this.newGame = this.newGame.bind(this);
+		this.addClick = this.addClick.bind(this);
     }
 
     componentDidMount() {
@@ -74,7 +76,7 @@ class Board extends Component {
                     {this.state.board.map((row, i1) => (
                         <tr key={i1}>
                             {row.map((val, i2) => (
-                                <Cell key={`${i1}-${i2}`} y={i1} x={i2} isLit={val} flipCellsAroundMe={this.flipCellsAround} />
+                                <Cell key={`${i1}-${i2}`} y={i1} x={i2} isLit={val} flipCellsAroundMe={this.flipCellsAround} addClick={this.addClick}/>
                             ))}
                         </tr>
                     ))}
@@ -83,8 +85,13 @@ class Board extends Component {
         );
     }
 
+
+	addClick() {
+		this.setState((st) => ({numClicks: st.numClicks + 1}));
+	}	
+
     resetBoard() {
-        this.setState({ hasWon: false, board: this.startingBoard.map((arr) => [ ...arr ]) });
+        this.setState({ hasWon: false, board: this.startingBoard.map((arr) => [ ...arr ]), numClicks: 0 });
     }
     newGame() {
         this.startingBoard = this.createBoard();
@@ -105,6 +112,7 @@ class Board extends Component {
                                 Play Again?
                             </button>
                         </div>
+						<span>It took you {this.state.numClicks} clicks!</span>
                     </div>
                 ) : (
                     <div>
